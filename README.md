@@ -23,3 +23,5 @@
 * Press g to snap grid  -- en projet : re-organiser les noeuds, maillons de manière automatique
 * Press l to load datas -- en projet : enregistrer et lire les données créées
 * Press d to save datas -- en projet : enregistrer et lire les données créées
+
+[Exemple Liste Chainée](https://raw.githubusercontent.com/NSIMoliere/TADviewer/main/data/ex_LC.png "Exemple Liste Chainée")
