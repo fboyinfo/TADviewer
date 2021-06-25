@@ -12,7 +12,7 @@
 * Lancer Processing et ajouter Mode Python (cliquer en haut à droite sur Java puis Add Mode)
 * Relancer pour prendre en compte le nouveau mode
 * Mettre le dossier complet dans votre dossier sketchbook (ce dossier est créé à l'installation de processing) dans un dossier TADViewer
-* Ouvrir Processing, choisir le mode Python, puis ouvrir TADViewer.py
+* Ouvrir Processing, choisir le mode Python, puis ouvrir TADViewer.pyde
 
 ## Pour utiliser :
 
