@@ -11,17 +11,15 @@
 
 ## Pour utiliser :
 
-tab to change mode -- Passer des listes chaînées / Arbre binaire / Arbre
-h to hide menus -- Avant un screenshot pour vos cours, pensez à cacher les menus et icones
-s to screenshoot -- Les copies d'écrans s'enregistrent dans le dossier TADViewer/data/
-k to switch WB<->color' -- Pour colorer un peu la vie
+* tab to change mode -- Passer des listes chaînées / Arbre binaire / Arbre
+* h to hide menus -- Avant un screenshot pour vos cours, pensez à cacher les menus et icones
+* s to screenshoot -- Les copies d'écrans s'enregistrent dans le dossier TADViewer/data/
+* k to switch WB<->color' -- Pour colorer un peu la vie
 
 ## Les fonction suivantes ne sont pas active : 
 
 ### Feel free to fork !
 
-Press g to snap grid  -- en projet : organiser les noeuds, maillons de manière automatique
-
-Press l to load datas -- en projet : enregistrer et lire les données créées
-
-Press d to save datas -- en projet : enregistrer et lire les données créées
+* Press g to snap grid  -- en projet : organiser les noeuds, maillons de manière automatique
+* Press l to load datas -- en projet : enregistrer et lire les données créées
+* Press d to save datas -- en projet : enregistrer et lire les données créées
