@@ -1,6 +1,11 @@
 
 # TADviewer - Visualiseur de Types Abstrait de Données pour prof et élèves - Terminale NSI
 
+* [Exemple Liste Chainée](https://raw.githubusercontent.com/NSIMoliere/TADviewer/main/data/ex_LC.png "Exemple Liste Chainée")
+* [Exemple Arbre Binaire](https://raw.githubusercontent.com/NSIMoliere/TADviewer/main/data/ex_AB.png "Exemple Arbre Binaire")
+* [Exemple Arbre](https://raw.githubusercontent.com/NSIMoliere/TADviewer/main/data/ex_Arbre.png "Exemple Arbre")
+
+
 ## Pour installer : 
 
 * Installer Processing : https://processing.org/download/
@@ -24,4 +29,3 @@
 * Press l to load datas -- en projet : enregistrer et lire les données créées
 * Press d to save datas -- en projet : enregistrer et lire les données créées
 
-[Exemple Liste Chainée](https://raw.githubusercontent.com/NSIMoliere/TADviewer/main/data/ex_LC.png "Exemple Liste Chainée")
