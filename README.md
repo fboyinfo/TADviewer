@@ -1,5 +1,5 @@
 
-# TADviewer - Visualiseur de Types Abstrait de données pour prof et élèves - Terminale NSI
+# TADviewer - Visualiseur de Types Abstrait de Données pour prof et élèves - Terminale NSI
 
 ## Pour installer : 
 
