@@ -14,7 +14,7 @@ num = 0
 global strkb,inputkb
 strkb = ''
 inputkb = False
-global selected,chaining
+global selected,chaining,editing
 selected = False
 chaining = False
 editing = False
@@ -54,12 +54,11 @@ def draw() :
     global lmh,lcm,mam,nnm
     global selected, chaining, editing
     background(cf)
-    lm.draw()
-    lmh.draw()
     ####################################
     x = mouseX
     y = mouseY
-    
+    lm.draw()
+    lmh.draw()
     if lm.visible : menuSpe(lmh.active)
     #################################### Dessins des elements
     if lmh.active == 0 :
@@ -77,14 +76,15 @@ def draw() :
     if selected : moveSelected(x,y)
     if chaining : chainSelected(x,y)
     #################################### visualisation input keyboard    
+    
     if inputkb :
         x = width - 1.75 * lm.w 
         y = 80
-        rectMode(CENTER) 
+        # rectMode(CENTER) 
         textAlign(CENTER)
         fill(c1)
-        rect(x,y,100,20)
-        rect(x,y+20,100,20)
+        rect(x-50,y-10,100,20)
+        rect(x-50,y+10,100,20)
         fill(k)
         textSize(12)
         text("enter value",x,y+6)
@@ -120,17 +120,15 @@ def mousePressed():
         if lmh.active == 0 :
             ade = addObject(lcm,x,y,ListeChainee,lesListes,"lst") or addObject(mam,x,y,Maillon,lesMaillons)
             if not(ade) :
-                setValue(lesListes,x,y)
-                setValue(lesMaillons,x,y)
-                editing = True
+                editing = setValue(lesListes,x,y) or setValue(lesMaillons,x,y)
         if lmh.active == 1 :
-            if not(addObject(nbm,x,y,NoeudBin,lesNoeudsBin)) :
-                setValue(lesNoeudsBin,x,y) 
-                editing = True
+            ade = addObject(nbm,x,y,NoeudBin,lesNoeudsBin)
+            if not(ade) :
+                editing = setValue(lesNoeudsBin,x,y) 
+                print(editing)
         if lmh.active == 2 :
             if not(addObject(nnm,x,y,Noeud,lesNoeuds)) :
-                setValue(lesNoeuds,x,y)  
-                editing = True
+                editing = setValue(lesNoeuds,x,y)  
         
                 
 def setValue(lst,x,y) :
@@ -144,7 +142,10 @@ def setValue(lst,x,y) :
             if e.clic(x,y) == 1 :
                 inputkb = True
                 lminput = e 
-                e.edited = True           
+                e.edited = True 
+                print(e)
+                return True
+    return False         
                     
 def addObject(elt,x,y,Objet,lst,v="v") :
     '''
@@ -160,6 +161,7 @@ def addObject(elt,x,y,Objet,lst,v="v") :
             selected = True
             lst.append(m)
             return True
+    return False
 
 
 def deselectAll() :
@@ -200,55 +202,7 @@ def target(mode,x,y) :
                 m.chain()
             m.chainingFalse()
                   
-                
-'''
-def target(x,y) :
 
-    for l in lesListes :
-        if l.chaining :
-            print(l)
-            l.chained = False
-            for ms in lesMaillons :
-                #if x>=ms.x and x<=ms.x+ms.w and y>=ms.y and y<=ms.y+25 :
-                if ms.clic(x,y) :
-                    l.chain(ms)
-                    l.chained = True
-            l.chainingFalse()
-            if not(l.chained) :
-                l.premier = None
-
-    for m in lesMaillons :
-        if m.chaining :
-            m.chained = False
-            print(m)
-            for ms in lesMaillons :
-                if ms.clic(x,y) :
-                    print(ms)
-                # if x>=ms.x and x<=ms.x+50 and y>=ms.y and y<=ms.y+25 :
-                    print(ms.valeur)
-                    print(m.valeur)
-                    m.chain(ms)
-                    m.chained = True
-            if not(m.suivant is None) : print(m.suivant.valeur)
-            print(m.chained)
-            m.chainingFalse()
-            if not(m.chained) :
-                m.suivant = None      
-                
-    for m in lesNoeudsBin :
-        if m.chaining :
-            m.chained = False
-            print(m)
-            for ms in lesNoeudsBin :
-                if ms.clic(x,y) :
-                    print(ms)
-                    m.chain(ms)
-                    m.chained = True
-            m.chainingFalse()
-            if not(m.chained) :
-                m.suivant = None
-'''    
-                
                                     
 def select(mode,x,y) :
     '''
@@ -451,6 +405,7 @@ def menuLC() :
     
 def menuSpe(mode) :
     global lm
+    global lmh,lcm,mam,nnm
     fill(k)
     if mode == 0 :
         global lcm,mam

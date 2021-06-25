@@ -30,6 +30,7 @@ class NoeudBin :
     def ct(self) :
         print(self.chaining)
         ctab = [{'x':self.x+12, 'y':self.y+37},{'x':self.x+37, 'y':self.y+37}]
+        print(ctab)
         return ctab[self.chaining-2]
         
     def chain(self,ms = None) :
@@ -48,11 +49,11 @@ class NoeudBin :
         self.chainingDroit = False
         
     def clic(self,x,y) :
-        if x>=self.x and x<=self.x + self.w and y>=self.y and y<=self.y + 25 :
+        if x >= self.x and x <= self.x + self.w and y >= self.y and y <= self.y + 25 :
             return 1
-        if x>=self.x and x<=self.x + self.w // 2 and y>self.y + 25  and y<=self.y + 50 :
+        if x >= self.x and x <= self.x + self.w // 2 and y > self.y + 25  and y <= self.y + 50 :
             return 2
-        if x>self.x + self.w // 2  and x<=self.x + self.w and y>self.y + 25  and y<=self.y + 50 :
+        if x > self.x + self.w // 2  and x <= self.x + self.w and y > self.y + 25  and y <= self.y + 50 :
             return 3
         return False
 
@@ -60,8 +61,6 @@ class NoeudBin :
         s = '(' + str(self.gauche) + ',' + str(self.valeur) + ',' + str(self.droit) + ')' 
         return s
 
-    
-    
     def draw(self):
         x = self.x
         y = self.y
@@ -82,7 +81,6 @@ class NoeudBin :
         noFill()
         rect(x,y+25,self.w//2,25)
         rect(x+self.w//2,y+25,self.w//2,25)
-        
         if self.gauche is None :
             fill(0,0,0)
             TNone(x+self.w//4,y+25+3)
@@ -111,7 +109,7 @@ class NoeudBin :
         
         textAlign(CENTER)
         text(self.valeur,x+25,y+17)
-    
+        
     
 
       
